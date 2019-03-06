@@ -1,0 +1,11 @@
+Public Enum øÿ÷∆¿‡–Õ
+	Start
+	BeginErrorReadLine
+	BeginOutputReadLine
+	Exited
+	PropertyGet
+	PropertySet
+	Close
+	Dispose
+	Kill
+End Enum
