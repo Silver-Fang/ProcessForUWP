@@ -2,8 +2,8 @@
 Module 远程Process代理
 	WithEvents 进程 As New Process, 控制服务器 As TCP客户端, 数据服务器 As TCP客户端, 错误服务器 As TCP客户端
 	Sub Main()
-		Dim a As String() = Command.Split(" ")
-		'Dim a As String() = {"0", "1", "642671AC6A72D.52333923F7214_9vcz5tcd8ce5e", "32768"}
+		'Dim a As String() = Command.Split(" ")
+		Dim a As String() = {"0", "1", "642671AC6A72D.52333923F7214_9vcz5tcd8ce5e", "32768"}
 		Dim e As New TCP侦听器(a(3))
 		Process.Start(New ProcessStartInfo("CheckNetIsolation.exe", "LoopbackExempt -a -n=""" & a(2) & """") With {.Verb = "runas"})
 		Dim b As 控制类型, c(4) As Boolean, d As Reflection.PropertyInfo
