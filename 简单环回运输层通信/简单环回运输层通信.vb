@@ -1,4 +1,7 @@
 Imports System.Net, System.Net.Sockets, System.Threading, System.IO
+''' <summary>
+''' 将TcpListener功能限定为环回通信
+''' </summary>
 Public Class TCP侦听器
 	Inherits TcpListener
 	Sub New(端口号 As UShort)
@@ -15,13 +18,19 @@ Public Class TCP侦听器
 End Class
 Public Delegate Sub 收到字符串EventHandler(sender As TCP客户端, 字符串 As String)
 Public Delegate Sub 收到字节EventHandler(sender As TCP客户端, 字节 As Byte)
+''' <summary>
+''' 将TcpClient功能限定为环回通信
+''' </summary>
 Public Class TCP客户端
 	Event 收到字符串 As 收到字符串EventHandler
 	Event 收到字节 As 收到字节EventHandler
 	ReadOnly Property 流读取器 As BinaryReader
 	ReadOnly Property 流写入器 As BinaryWriter
-
 	ReadOnly 基础客户端 As TcpClient
+	''' <summary>
+	''' 注意该方法会阻塞线程，在连接成功之前不会返回。
+	''' </summary>
+	''' <param name="端口号"></param>
 	Sub New(端口号 As UShort)
 		Dim b As New Text.StringBuilder
 		基础客户端 = New TcpClient
@@ -102,6 +111,9 @@ Public Class TCP客户端
 				Return Nothing
 		End Select
 	End Function
+	''' <summary>
+	''' 出于性能考虑，监听一旦开始就无法终止，只能释放整个对象。如果你需要监听功能，请单独设置一个专用的TCP客户端。如果同时使用其它接收功能，将产生未知行为。
+	''' </summary>
 	Sub 监听字符串()
 		Task.Run(Sub()
 					 Do
@@ -109,6 +121,9 @@ Public Class TCP客户端
 					 Loop
 				 End Sub)
 	End Sub
+	''' <summary>
+	''' 出于性能考虑，监听一旦开始就无法终止，只能释放整个对象。如果你需要监听功能，请单独设置一个专用的TCP客户端。如果同时使用其它接收功能，将产生未知行为。
+	''' </summary>
 	Sub 监听字节()
 		Task.Run(Sub()
 					 Do

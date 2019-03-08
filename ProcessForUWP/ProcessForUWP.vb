@@ -8,11 +8,14 @@ Public Class DataReceivedEventArgs
 End Class
 Public Delegate Sub DataReceivedEventHandler(sender As Process, e As DataReceivedEventArgs)
 ''' <summary>
-''' 继承自System.Diagnostics.Process，但可以通过TCP环回代理供UWP使用！
+''' 继承自System.Diagnostics.Process，但可以在UWP平台使用！使用方法基本和原版一样。
 ''' </summary>
 Public Class Process
 	Inherits System.Diagnostics.Process
 	WithEvents 控制客户端 As TCP客户端, 错误客户端 As TCP客户端
+	''' <summary>
+	''' 如有需要，你可以直接从TCP客户端接收信息。
+	''' </summary>
 	Public WithEvents 数据客户端 As TCP客户端
 	Shadows Event OutputDataReceived As DataReceivedEventHandler
 	Shadows Event ErrorDataReceived As DataReceivedEventHandler
@@ -63,6 +66,7 @@ Public Class Process
 	''' <summary>
 	''' 启动一个代理进程
 	''' </summary>
+	''' <param name="端口">环回通信的端口号，必须和你的Package.appxmanifest中设定的值一致。</param>
 	Sub New(Optional 端口 As UShort = 32768)
 		Call FullTrustProcessLauncher.LaunchFullTrustProcessForCurrentAppAsync("环回配置")
 		控制客户端 = New TCP客户端(端口)

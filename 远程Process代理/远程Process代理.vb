@@ -2,8 +2,7 @@
 Module 远程Process代理
 	WithEvents 进程 As New Process, 控制服务器 As TCP客户端, 数据服务器 As TCP客户端, 错误服务器 As TCP客户端
 	Sub Main()
-		'Dim a As String() = Command.Split(" ")
-		Dim a As String() = {"0", "1", "642671AC6A72D.52333923F7214_9vcz5tcd8ce5e", "32768"}
+		Dim a As String() = Command.Split(" ")
 		Dim e As New TCP侦听器(a(3))
 		Process.Start(New ProcessStartInfo("CheckNetIsolation.exe", "LoopbackExempt -a -n=""" & a(2) & """") With {.Verb = "runas"})
 		Dim b As 控制类型, c(4) As Boolean, d As Reflection.PropertyInfo
@@ -14,7 +13,6 @@ Module 远程Process代理
 		e.Stop()
 		Do
 			b = 控制服务器.接收字节
-			'Continue Do
 			Select Case b
 				Case 控制类型.Start
 					With 进程.StartInfo
@@ -29,12 +27,8 @@ Module 远程Process代理
 					End With
 					进程.Start()
 					Threading.Tasks.Task.Run(Sub()
-												 'Dim f As String
 												 Do
 													 进程.StandardInput.WriteLine(数据服务器.接收字符串)
-													 'f = 数据服务器.接收字符串
-													 '进程.StandardInput.WriteLine(f)
-													 'f.appendLine(f)
 												 Loop
 											 End Sub)
 				Case 控制类型.BeginErrorReadLine
@@ -63,7 +57,6 @@ Module 远程Process代理
 
 	Private Sub 进程_OutputDataReceived(sender As Object, e As DataReceivedEventArgs) Handles 进程.OutputDataReceived
 		数据服务器.发送(e.Data)
-		'Console.WriteLine(e.Data)
 	End Sub
 
 	Private Sub 进程_Exited(sender As Object, e As EventArgs) Handles 进程.Exited
