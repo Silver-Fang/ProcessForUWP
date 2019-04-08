@@ -2,21 +2,23 @@
 在你的解决方案中添加一个打包项目和一个空白桌面应用项目。在打包项目中引用你的UWP项目和桌面应用项目。在UWP项目中添加引用“UWP端.dll”，在桌面应用项目中引用“桌面端.dll”。注意UWP端.dll是依赖桌面端.dll的，所以桌面端.dll也需要添加到你的UWP项目中，但是不需要添加引用。然后在打包项目的Package.appxmanifest中：
 在Package根节点下添加属性：xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
 在Package\Applications\Application下添加子节点：
-<code>
-			<Extensions>
-				<desktop:Extension Category="windows.fullTrustProcess" Executable="【桌面应用项目的路径，如：远程代理\远程代理.exe】">
-					<desktop:FullTrustProcess>
-						<desktop:ParameterGroup GroupId="环回配置" Parameters="【包系列名+空格+TCP环回端口号，如：642671AC6A72D.52333923F7214_9vcz5tcd8ce5e 32768】"  />
-					</desktop:FullTrustProcess>
-				</desktop:Extension>
-			</Extensions>
-	</code>
+```xml
+<Extensions>
+	<desktop:Extension Category="windows.fullTrustProcess" Executable="【桌面应用项目的路径，如：远程代理\远程代理.exe】">
+		<desktop:FullTrustProcess>
+			<desktop:ParameterGroup GroupId="环回配置" Parameters="【包系列名+空格+TCP环回端口号，如：642671AC6A72D.52333923F7214_9vcz5tcd8ce5e 32768】"  />
+		</desktop:FullTrustProcess>
+	</desktop:Extension>
+</Extensions>
+```
 在你的空白桌面项目中添加新代码文件，输入以下代码：
+```vb
 Module 远程代理
 	Sub Main()
 		ProcessForUWP.桌面端.启动远程代理(Command)
 	End Sub
 End Module
+```
 在项目属性中将启动项目设为Sub Main。
 在你的UWP项目中需要使用Process类的地方，务必在代码文件中Imports ProcessForUWP.UWP端，否则会变成使用原本的Process类了。其它代码不需要修改。
 在解决方案配置管理器中，三个项目的平台需保持一致，建议都设为x64。生成都要勾选。部署只需勾选打包项目，UWP项目和桌面项目都不需部署。
