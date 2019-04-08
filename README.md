@@ -2,6 +2,7 @@
 在你的解决方案中添加一个打包项目和一个空白桌面应用项目。在打包项目中引用你的UWP项目和桌面应用项目。在UWP项目中添加引用“UWP端.dll”，在桌面应用项目中引用“桌面端.dll”。注意UWP端.dll是依赖桌面端.dll的，所以桌面端.dll也需要添加到你的UWP项目中，但是不需要添加引用。然后在打包项目的Package.appxmanifest中：
 在Package根节点下添加属性：xmlns:desktop="http://schemas.microsoft.com/appx/manifest/desktop/windows10"
 在Package\Applications\Application下添加子节点：
+<code>
 			<Extensions>
 				<desktop:Extension Category="windows.fullTrustProcess" Executable="【桌面应用项目的路径，如：远程代理\远程代理.exe】">
 					<desktop:FullTrustProcess>
@@ -9,6 +10,7 @@
 					</desktop:FullTrustProcess>
 				</desktop:Extension>
 			</Extensions>
+	</code>
 在你的空白桌面项目中添加新代码文件，输入以下代码：
 Module 远程代理
 	Sub Main()
