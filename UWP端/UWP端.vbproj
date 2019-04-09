@@ -7,7 +7,7 @@
     <ProjectGuid>{C652F49F-87A9-4F06-9ADE-BE6AFEB339C2}</ProjectGuid>
     <OutputType>Library</OutputType>
     <RootNamespace>ProcessForUWP.UWP端</RootNamespace>
-    <AssemblyName>UWP端</AssemblyName>
+    <AssemblyName>ProcessForUWP.UWP端</AssemblyName>
     <DefaultLanguage>zh-CN</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
@@ -23,7 +23,7 @@
     <DefineTrace>true</DefineTrace>
     <NoConfig>true</NoConfig>
     <OutputPath>bin\Debug</OutputPath>
-    <DocumentationFile>UWP端.xml</DocumentationFile>
+    <DocumentationFile>ProcessForUWP.UWP端.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DefineConstants>NETFX_CORE,WINDOWS_UWP</DefineConstants>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
@@ -37,7 +37,7 @@
     <NoConfig>true</NoConfig>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release</OutputPath>
-    <DocumentationFile>UWP端.xml</DocumentationFile>
+    <DocumentationFile>ProcessForUWP.UWP端.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
     <DefineConstants>NETFX_CORE,WINDOWS_UWP</DefineConstants>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
@@ -51,7 +51,7 @@
     <DefineConstants>NETFX_CORE,WINDOWS_UWP</DefineConstants>
     <DebugType>full</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <DocumentationFile>UWP端.xml</DocumentationFile>
+    <DocumentationFile>ProcessForUWP.UWP端.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
@@ -62,7 +62,7 @@
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <DocumentationFile>UWP端.xml</DocumentationFile>
+    <DocumentationFile>ProcessForUWP.UWP端.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
@@ -74,7 +74,7 @@
     <DefineConstants>NETFX_CORE,WINDOWS_UWP</DefineConstants>
     <DebugType>full</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <DocumentationFile>UWP端.xml</DocumentationFile>
+    <DocumentationFile>ProcessForUWP.UWP端.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
@@ -85,7 +85,7 @@
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <DocumentationFile>UWP端.xml</DocumentationFile>
+    <DocumentationFile>ProcessForUWP.UWP端.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
@@ -97,7 +97,7 @@
     <DefineConstants>NETFX_CORE,WINDOWS_UWP</DefineConstants>
     <DebugType>full</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <DocumentationFile>UWP端.xml</DocumentationFile>
+    <DocumentationFile>ProcessForUWP.UWP端.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
@@ -108,7 +108,7 @@
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <DocumentationFile>UWP端.xml</DocumentationFile>
+    <DocumentationFile>ProcessForUWP.UWP端.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
@@ -120,7 +120,7 @@
     <DefineConstants>NETFX_CORE,WINDOWS_UWP</DefineConstants>
     <DebugType>full</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <DocumentationFile>UWP端.xml</DocumentationFile>
+    <DocumentationFile>ProcessForUWP.UWP端.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
@@ -131,7 +131,7 @@
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <UseVSHostingProcess>false</UseVSHostingProcess>
-    <DocumentationFile>UWP端.xml</DocumentationFile>
+    <DocumentationFile>ProcessForUWP.UWP端.xml</DocumentationFile>
     <NoWarn>41999,42016,42017,42018,42019,42020,42021,42022,42032,42036,42314</NoWarn>
   </PropertyGroup>
   <PropertyGroup>

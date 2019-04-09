@@ -4,6 +4,15 @@
     <RootNamespace>ProcessForUWP.桌面端</RootNamespace>
     <TargetFramework>netstandard2.0</TargetFramework>
     <Platforms>AnyCPU;x64</Platforms>
+    <PackageId>ProcessForUWP.桌面端</PackageId>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>磷蓉</Authors>
+    <Company>翁悸会</Company>
+    <Product>ProcessForUWP</Product>
+    <PackageProjectUrl>https://github.com/Silver-Fang/ProcessForUWP</PackageProjectUrl>
+    <PackageTags>Process UWP</PackageTags>
+    <RepositoryUrl>https://github.com/Silver-Fang/ProcessForUWP</RepositoryUrl>
+    <Description>这是对System.Diagnostics.Process类的高仿。我们知道，在UWP中一般是不允许对此类直接的使用的。而通过本高仿类可以间接地使用此类，实现用UWP启动桌面进程，并与其进行标准输入输出的交互。此项目分两个包，此包是桌面端，为UWP端所依赖。</Description>
   </PropertyGroup>
 
 </Project>
