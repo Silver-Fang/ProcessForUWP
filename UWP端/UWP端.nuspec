@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>ProcessForUWP.UWP端</id>
+    <version>1.0.0</version>
+    <title>ProcessForUWP.UWP端</title>
+    <authors>磷蓉</authors>
+    <owners>磷蓉</owners>
+    <projectUrl>https://github.com/Silver-Fang/ProcessForUWP</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>这是对System.Diagnostics.Process类的高仿。我们知道，在UWP中一般是不允许对此类直接的使用的。而通过本高仿类可以间接地使用此类，实现用UWP启动桌面进程，并与其进行标准输入输出的交互。具体使用方法参见项目URL</description>
+    <tags>Process UWP</tags>
+    <dependencies>
+      <dependency id="ProcessForUWP.桌面端" version="1.0.0"/>
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="bin\x64\Release\*.dll" target="lib"/>
+  </files>
+</package>
